@@ -24,7 +24,7 @@ For example, "%h/.ssh/%u_auth_keys" would cause the system to search for the "au
 
 ### Format of the "Authorized Keys" File
 
-The "authorized keys" file lists keys that are used authorized to authenticate the user, one per line. Empty lines and
+The "authorized keys" file lists keys that are authorized to authenticate the user, one per line. Empty lines and
 lines that begin with the '#' character are ignored. Each line contains a public SSH key, which may be preceded by
 options which control what can be done with that key. The full list of options and their descriptions is available
 [here](https://www.ssh.com/academy/ssh/authorized_keys/openssh).
