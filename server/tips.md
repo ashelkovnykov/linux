@@ -1,33 +1,6 @@
 # Server Tips
 
-## Backup Entire Pi Server OS
-
-To backup the entire Pi OS, mount the micro SD containing the OS on another computer, and run the following command:
-
-```shell
-sudo dd if=[mount point] of=[backup path] bs=4M
-```
-
-For example:
-
-```shell
-sudo dd if=/dev/sdb of=~/backup/backup.img bs=4M
-```
-
-### Recover Pi OS
-
-To recover the entire Pi OS from an image, simply reverse the above operation:
-```shell
-sudo dd if=~/backup/backup.img of=/dev/sdb bs=4M
-```
-
-## Disabling Network Adapters
-
-To disable/enable a network adapter such as `eth0` or `wlan0`, use the following commands:
-```shell
-sudo ifconfig eth0 down
-sudo ifconfig eth0 up
-```
+This file contains tips which are useful, but not necessary, for administrating a server.
 
 ## Keep an Empty, 8GB File on Your Server
 
@@ -48,12 +21,3 @@ dd if=/dev/zero of=garbage.can bs=1M count=8192
 
 If you forget which ports are open on your server, you can use a portscanner tool such as [this one](https://spyse.com/tools/port-scanner) (though a
 terminal-based one would be more secure) to determine which ports are open.
-
-## Accessing `root` On Your VPS
-
-`root` can be accessed on most VPSes using the following command:
-
-```
-sudo su -
-```
-

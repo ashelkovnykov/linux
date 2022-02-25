@@ -10,8 +10,7 @@ New ssh keys can be generated using the `ssh-keygen` command.
 ## Registering Keys on a Remote Server
 
 To register an ssh key on a remote server, it needs to be added to the "authorized keys" file. The "authorized keys"
-file is by default located at `~/.ssh/authorized_keys` for whichever user to which access is needed on the remote
-server.
+file is by default located at `~/.ssh/authorized_keys` for each user. 
 
 Where the system will search for the "authorized keys" file is set in `/etc/ssh/ssh_config`, using the
 "AuthorizedKeysFile" option. The option may contain more than one location, separated by spaces. The option accepts the

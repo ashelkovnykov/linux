@@ -40,7 +40,8 @@ here.
 ### Tips
 
 * It's a good idea to strictly control the permissions of service unit files.
-* It's possible to check for syntax errors in a service unit file before launching it using the command `systemctl status [service name]`
+* It's possible to check for syntax errors in a service unit file before launching it using the command
+  `systemctl status [service name]`
 
 ## Starting the Service on Boot
 

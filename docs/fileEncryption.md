@@ -2,7 +2,8 @@
 
 ## Using GnuPG
 
-GnuPG is the open-source implementation of the OpenPGP standard (PGP stands for "Pretty Good Privacy").
+GPG stands for GnuPG, which is the open-source implementation of the OpenPGP standard (PGP stands for "Pretty Good
+Privacy").
 
 ### Encrypt Files
 

@@ -9,7 +9,7 @@ first programs used for accessing information on the internet when TCP/IP first 
 FTP requires username/password authentication, however it is considered to be a massively insecure protocol:
 * The username/password credentials are passed in plaintext, meaning that they can be sniffed
 * The files are transferred in plaintext, meaning that their contents can be sniffed
-* The files are not protected against modifications, meaning that an active man-in-the-middle can modify them on-the-fly
+* The files are not protected against modifications, meaning that an active man-in-the-middle can modify them in-the-air
 
 ## SCP
 

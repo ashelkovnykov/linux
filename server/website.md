@@ -1,4 +1,4 @@
-# Web Server
+# Initiating a Web Server
 
 Below is a checklist to run through when setting up a new website:
 
@@ -22,7 +22,21 @@ Below is a checklist to run through when setting up a new website:
   - `net.ipv4.conf.default.send_redirects=0`
   - `net.ipv4.conf.default.accept_redirects=0`
   - `net.ipv4.icmp_ignore_bogus_error_responses=1`
-12. Install Apache Web Server (`apache2`)
-13. Setup Apache Web Server settings in `/etc/apache2` and put website data in `/var/www`
-14. Make sure that `apache2` and `sshd` start on start up (e.g. `systemctl enable apache2`)
-15. Setup SSL certificate for the website using `www.letsencrypt.org`
+12. Install a web server (Apache, Nginx, or Caddy)
+13. Setup the web server
+
+## Apache Web Server
+
+TODO
+
+1. Setup Apache Web Server settings in `/etc/apache2` and put website data in `/var/www`
+2. Make sure that `apache2` and `sshd` start on start up (e.g. `systemctl enable apache2`)
+3. Setup SSL certificate for the website using `www.letsencrypt.org`
+
+## Nginx
+
+TODO
+
+## Caddy
+
+TODO

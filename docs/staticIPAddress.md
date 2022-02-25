@@ -4,7 +4,14 @@ A static IP address is one that is permanently assigned to a router by an ISP. U
 servers: web, FTP, and email. They're also useful for VoIP applications and weather monitoring stations. However, static
 IPs are much more expensive than dynamic IPs, less private, and drastically more likely to be hacked.
 
-## Enabling Static IP from Router
+Static IPs also have meaning within your home network, when hosting servers. Most servers require port forwarding,
+meaning opening a particular port to incoming internet traffic and forwarding the data that arrives to the proper
+application on the proper machine within your home network. Just like an ISP, your router assigns internal IPs based on
+the first available address, meaning that people turning their computers/phones on/off affects the IP of the device.
+Enabling a static IP in your router for a particular device reserves the IP so that if the device is online, it will
+always have the reserved IP.
+
+## Enabling Internal Static IP from Router
 
 ### Determine Default Gateway
 
@@ -23,7 +30,7 @@ wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-From this we can determine that the default gateway is `192.168.1.1` (it is for most routers), that the current IP
+From this, we can determine that the default gateway is `192.168.1.1` (it is for most routers), that the current IP
 (which should be made static) is `192.168.1.11`, and that the network mask is `255.255.255.0`, meaning that valid IP
 addresses for this router will be in the range `192.168.1.0` to `192.168.1.255`.
 

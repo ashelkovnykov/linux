@@ -1,19 +1,29 @@
 # Managing Users
 
-One of the primary responsibilities of a systems administrator is managing the user accounts for the system, as well as
+One of the primary responsibilities of a system administrator is managing the user accounts for the system, as well as
 their groups and permissions.
 
-## Adding Users
+## Creating New Users
 
-New users are created using the `useradd` command (note that using this command requires write access to
-`/etc/passwd`). Unless explicitly overriden by the command, `useradd` will use the default settings found in
-`/etc/default/useradd`.
+New users are created using the `useradd` command (note that using this command requires write access to `/etc/passwd`).
+Unless explicitly overwritten by the command, `useradd` will use the default settings found in `/etc/default/useradd`.
+
+### System Users
+
+System users have a home directory, but no default shell and no group. They're useful for situations where a service
+should not be run by `root` for security reasons, but no individual user should own the service. To create a system
+user, add the `--system` option to the command.
 
 ### Examples
 
 Create new user with default options:
 ```shell
 sudo useradd new-user
+```
+
+Create new system user:
+```shell
+sudo useradd --system new-user
 ```
 
 Create new user with home directory in a different location:
@@ -76,7 +86,7 @@ The user login process is governed by several settings located in `/etc/login.de
 
 ### View All Groups for System
 
-To view all of the groups that exist on a system, their numerical IDs, and which users are members of the group, run the
+To view all groups that exist on a system, their numerical IDs, and which users are members of the group, run the
 following command:
 
 ```shell
@@ -143,8 +153,8 @@ sudo usermod -G group-to-keep-1,group-to-keep-2,... some-user
 
 ## Deleting Users
 
-To properly delete a user account as a systems administrator requires a number of steps. However, some of the steps may
-be skipped depending on the particulars of the system.
+To properly delete a user account as a system administrator requires a number of steps. However, some steps may be
+skipped, depending on the particulars of the system.
 
 The worst-case scenario for a sysadmin is that a user account needs to be deleted because the owner is being fired for
 malicious behaviour. The user is currently logged in, and unaware that he is about to be escorted from the premises.
@@ -195,7 +205,7 @@ sudo tar cfvz bad-user_2021-12-25.tar.gz /home/bad-user
 ### Remove `cron` Jobs
 
 If a malicious user knows that he is about to be removed, he may schedule malicious jobs in advance. Alternatively, he
-may schedule them every week and disable them the day before if he hasn't been caught yet, as a sort of dead-hand.
+may schedule them every week and disable them the day before if he hasn't been caught yet, as a "dead man's hand".
 Scheduled `cron` jobs live in `/var/spool/cron/crontabs/[username]`: if this directory is non-empty, then the user has
 `cron` jobs scheduled. They can be removed with the `crontab` command:
 
@@ -214,4 +224,12 @@ sudo deluser --remove-home bad-user
 
 # All other distros
 sudo userdel --remove bad-user
+```
+
+## Deleting Groups
+
+Deleting a group in Linux is simple: just use the `groupdel` command:
+
+```shell
+sudo groupdel [GROUP]
 ```

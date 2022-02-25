@@ -28,11 +28,11 @@ usage() {
 #
 # `seen` is an associative-array to which `awk` will pass every line of the file as a String. If this is the first time
 # that a line has been seen (meaning that it is not present in the array), `seen[$0]` will evaluate to `0`. The post-fix
-# `++` operator will `seen[$0]`, thus maintaining a count of the number of times that this line has been seen, and
-# return the previous value. The `!` (Logical Not) operator will treat the value of `seen[$0]` as a Boolean, and invert
-# it. Thus, the first time that a line is seen, the expression `!seen[$0]++` will evaluate to `true`, but each time
-# thereafter it will evaluate to `false`. The `awk` command prints only those lines for which the argument expression
-# evaluates to `true`.
+# `++` operator will increment `seen[$0]`, thus maintaining a count of the number of times that this line has been seen,
+# and return the previous value. The `!` (logical NOT) operator will treat the value of `seen[$0]` as a boolean, and
+# invert it. Thus, the first time that a line is seen, the expression `!seen[$0]++` will evaluate to `true`, but each
+# time thereafter it will evaluate to `false`. The `awk` command prints only those lines for which the argument
+# expression evaluates to `true`.
 #
 main() {
   awk '!seen[$0]++' $1

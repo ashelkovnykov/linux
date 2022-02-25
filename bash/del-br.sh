@@ -1,5 +1,15 @@
 #!/bin/bash
+# ======================================================================================================================
+#
+# del-br - Delete unwanted branches from a git repo
+#
+# ======================================================================================================================
 
+#-----------------------------------------------------------
+# BEGIN
+#-----------------------------------------------------------
+
+# Declare list containing names of all unwanted branches
 declare -a branches=(
   "origin/alef-plea-refactor"
   "origin/alef-testnet-merge"
@@ -978,7 +988,11 @@ declare -a branches=(
   "upstream/zinc-plus-copper-makes-brass"
 )
 
+# Iterate over list and delete each branch
 for val in ${branches[@]}; do
-	git branch -d -r $val
+  git branch -d -r $val
 done
 
+#-----------------------------------------------------------
+# END
+#-----------------------------------------------------------

@@ -40,7 +40,7 @@ main() {
   # Print the exit status of the most recently executed command
   echo $?
 
-  # Shift input parameters
+  # Shift input parameters "left"
   shift 1
 
   # Dummy command to purposely cause error

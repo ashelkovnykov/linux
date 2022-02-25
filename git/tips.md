@@ -7,7 +7,8 @@ To check out a pull request locally, run the following command:
 git fetch [remote] pull/[ID]/head:[branch]
 ```
 
-For example, to check out [this](https://github.com/ashelkovnykov/offline-wallet-generator/pull/3) request to a local fork in a branch named "pullr", the command would be:
+For example, to check out [this](https://github.com/ashelkovnykov/offline-wallet-generator/pull/3) request to a local
+fork in a branch named "pullr", the command would be:
 ```
 git fetch origin pull/3/head:pullr
 ```
@@ -40,10 +41,10 @@ The git command to generate a patch is `git format-patch`. The most useful optio
 git format-patch [branch OR revision]
 ```
 
-
-By default, `git format-patch` will output one patch for every commit on the path between the current branch and the input branch/revision to the current directory. Adding the `-o` option allows the user to specify a new or different directory to which the patches should be output. Other options can also be used to control the naming convention for the produced patch files.
-
-To squash all changes into a single patch, the following command is recommended:
+By default, `git format-patch` will output one patch for every commit on the path between the current branch and the
+input branch/revision to the current directory. Adding the `-o` option allows the user to specify a new or different
+directory to which the patches should be output. Other options can also be used to control the naming convention for the
+produced patch files. To squash all changes into a single patch, the following command is recommended:
 
 ```
 git format-patch [branch or revision] --stdout > [patch file] 
