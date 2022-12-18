@@ -1,4 +1,4 @@
-# Server Tips
+# Commands
 
 This file contains generic commands which you may need to run while administrating a server.
 

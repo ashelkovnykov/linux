@@ -1,4 +1,15 @@
-# Initiating a Web Server
+# Hosting a Website
+
+## Quick and Dirty Testing
+
+You can host a website from local files for quick-and-dirty testing using Python. Run the following command from the
+root directory of the website:
+
+```shell
+python3 -m http.server
+```
+
+## Initiating a Web Server
 
 Below is a checklist to run through when setting up a new website:
 
@@ -25,7 +36,7 @@ Below is a checklist to run through when setting up a new website:
 12. Install a web server (Apache, Nginx, or Caddy)
 13. Setup the web server
 
-## Apache Web Server
+### Apache Web Server
 
 TODO
 
@@ -33,10 +44,10 @@ TODO
 2. Make sure that `apache2` and `sshd` start on start up (e.g. `systemctl enable apache2`)
 3. Setup SSL certificate for the website using `www.letsencrypt.org`
 
-## Nginx
+### Nginx
 
 TODO
 
-## Caddy
+### Caddy
 
 TODO

@@ -17,6 +17,17 @@ Docker binary distributions are (for some reason) unreliable. It's possible that
 older version of your OS, or for the major version of your OS (as opposed to the minor version). The raw distributions
 are located [here](https://download.docker.com/linux/).
 
+## Coping Directories to Container
+
+To copy an entire directory recursively using Dockerfile commands, use the `COPY` directive as follows:
+
+```
+COPY src/ dest/
+```
+
+This will copy `src` recursively into the `dest` folder of the container. If you do `COPY src/* dest/`, it will instead
+copy the contents of `src` **non-recursively** into `dest`.
+
 ## Logs
 
 If logging is enabled for Docker, the logs are stored in `/var/lib/docker/containers/<container_id>/`.

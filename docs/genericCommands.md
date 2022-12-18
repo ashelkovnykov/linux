@@ -6,6 +6,24 @@ Below is a collection of useful Linux commands that may come up day-to-day.
 
 The command to do this is `cat /proc/meminfo`.
 
+## Copy first XX bytes of file
+
+```shell
+head -c XX file.in > file.out
+```
+
+## Copy last XX bytes of file
+
+```shell
+head -c -XX file.in > file.out
+```
+
+## Count number of lines in a file
+
+```shell
+wc -l file.in
+```
+
 ## Detect Browser Version
 
 ### Vivaldi
