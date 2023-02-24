@@ -26,6 +26,15 @@ By adding a second URL to `origin` in `.git/config`, git will push to both URLs.
 
 Note: git will only pull from the first URL.
 
+## Stop Tracking Remote Branches
+
+If you accidentally start tracking every branch in the origin or upstream repo locally, you can stop tracking them with
+the following command:
+
+```shell
+git branch -d -r origin/<branch name>
+```
+
 ## Generating Patches
 
 The git command to generate a patch is `git format-patch`. The most useful options for it are:

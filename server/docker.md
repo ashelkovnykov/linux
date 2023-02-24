@@ -30,7 +30,9 @@ copy the contents of `src` **non-recursively** into `dest`.
 
 ## Logs
 
-If logging is enabled for Docker, the logs are stored in `/var/lib/docker/containers/<container_id>/`.
+If logging is enabled for Docker, the logs are stored in `/var/lib/docker/containers/<container_id>/`. However, you can
+usually access them more easily and efficiently using the
+[docker logs command](https://docs.docker.com/engine/reference/commandline/logs/).
 
 ## Start Containers Automatically on Startup
 

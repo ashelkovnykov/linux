@@ -98,12 +98,12 @@ TODO
 
 ## Linux Partitions Recommended Settings
 
-Partition | File System | Size
---- | --- | ---
-boot | fat32 | 16GB
-swap | swap | (MEM + sqrt(MEM))
-root | ext4 | ~50GB
-home | ext4 | Whatever is left, minus ~50GB (in case you need another root)
+| Partition | File System | Size                                                          |
+|-----------|-------------|---------------------------------------------------------------|
+| boot      | fat32       | 500MB                                                         |
+| swap      | swap        | (MEM + sqrt(MEM))                                             |
+| root      | ext4        | ~32GB                                                         |
+| home      | ext4        | Whatever is left, minus ~32GB (in case you need another root) |
 
 ## Utilities
 

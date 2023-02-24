@@ -13,12 +13,12 @@ always have the reserved IP.
 
 ## Enabling Internal Static IP from Router
 
-### Determine Default Gateway
+### Determine Current IP
 
-Determine the default gateway for your router using the `ifconfig` command:
+Determine your current IP from your router using the `ifconfig` command:
 
 ```shell
-user@linux:~$ifconfig
+user@linux:~$ ifconfig
 
 wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.1.11  netmask 255.255.255.0  broadcast 192.168.1.255
@@ -30,14 +30,14 @@ wlp0s20f3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-From this, we can determine that the default gateway is `192.168.1.1` (it is for most routers), that the current IP
-(which should be made static) is `192.168.1.11`, and that the network mask is `255.255.255.0`, meaning that valid IP
-addresses for this router will be in the range `192.168.1.0` to `192.168.1.255`.
+From this, we can determine that the current IP (which should be made static) is `192.168.1.11`, and that the network
+mask is `255.255.255.0`, meaning that valid IP addresses for this router will be in the range `192.168.1.0` to
+`192.168.1.255`.
 
 If your OS doesn't have the `ifconfig` command, then instead you can use `ip addr`:
 
 ```shell
-user@linux:~$ip addr
+user@linux:~$ ip addr
 
 1: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
     link/ether 3c:f0:11:38:60:bc brd ff:ff:ff:ff:ff:ff
@@ -53,12 +53,27 @@ user@linux:~$ip addr
        valid_lft forever preferred_lft forever
 ```
 
+### Determine Default Gateway
+
+Determine the default gateway for the router using the `ip route` command:
+
+```shell
+user@linux:~$ ip route
+
+default via 192.16.1.254 dev wlp0s20f3 proto dhcp metric 600 
+10.16.0.0/16 dev tun0 proto kernel scope link src 10.16.0.36 
+169.254.0.0/16 dev wlp0s20f3 scope link metric 1000 
+192.16.1.0/24 dev wlp0s20f3 proto kernel scope link src 172.16.1.68 metric 600
+```
+
+From this, we can determine that the default gateway is `192.16.1.254`.
+
 ### Determine DNS Servers
 
 Determine the DNS servers that are used by your router by checking `/etc/resolv.conf`:
 
 ```shell
-user@linux:~$cat /etc/resolv.conf
+user@linux:~$ cat /etc/resolv.conf
 
 nameserver 127.0.0.53
 nameserver 8.8.8.8
